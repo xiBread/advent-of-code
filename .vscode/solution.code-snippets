@@ -1,0 +1,16 @@
+{
+	"Solution": {
+		"scope": "typescript",
+		"prefix": "solution",
+		"body": [
+			"import input from \"\\$input/${TM_DIRECTORY/.+?(\\d+)/$1/}/${TM_FILENAME_BASE}.txt\";",
+			"import { solve } from \"\\$lib\";",
+			"",
+			"function day${TM_FILENAME_BASE}() {",
+			"\t$0",
+			"}",
+			"",
+			"solve(\"Day ${TM_FILENAME_BASE/0?(\\d+)/$1/}: $1\", day${TM_FILENAME_BASE});",
+		],
+	},
+}

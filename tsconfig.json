@@ -1,0 +1,23 @@
+{
+	"compilerOptions": {
+		"noEmit": true,
+		"outDir": "dist",
+		"strict": true,
+		"skipLibCheck": true,
+		"target": "ESNext",
+		"module": "Preserve",
+		"moduleDetection": "force",
+		"esModuleInterop": true,
+		"verbatimModuleSyntax": true,
+		"resolveJsonModule": true,
+		"baseUrl": ".",
+		"paths": {
+			"$input/*": [
+				"./input/*"
+			],
+			"$lib": [
+				"./src/lib"
+			]
+		}
+	}
+}

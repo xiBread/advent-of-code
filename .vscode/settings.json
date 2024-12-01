@@ -1,0 +1,9 @@
+{
+	"code-runner.executorMap": {
+		"typescript": "tsx --import register.js --disable-warning=ExperimentalWarning"
+	},
+	"eslint.codeActionsOnSave.rules": [
+		"!prefer-const",
+		"*"
+	]
+}

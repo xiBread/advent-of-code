@@ -1,0 +1,28 @@
+{
+	"type": "module",
+	"packageManager": "pnpm@9.14.0",
+	"prettier": {
+		"semi": true,
+		"tabWidth": 4,
+		"useTabs": true,
+		"printWidth": 100
+	},
+	"scripts": {
+		"solve": "tsx --disable-warning=ExperimentalWarning solve.js",
+		"style": "pnpm lint:fix && pnpm prettier",
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix",
+		"prettier": "prettier -w ."
+	},
+	"dependencies": {
+		"c8n": "^0.1.1"
+	},
+	"devDependencies": {
+		"@antfu/eslint-config": "^3.8.0",
+		"@types/node": "^22.9.0",
+		"eslint-config-prettier": "^9.1.0",
+		"prettier": "^3.3.3",
+		"tsx": "^4.19.2",
+		"typescript": "^5.6.3"
+	}
+}
