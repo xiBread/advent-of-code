@@ -1,11 +1,11 @@
 import input from "$input/2024/02.txt";
 import { solve } from "$lib";
 
-function isSafe(levels: number[]) {
+function isSafe(report: number[]) {
 	const differences: number[] = [];
 
-	for (let i = 1; i < levels.length; i++) {
-		differences.push(levels[i] - levels[i - 1]);
+	for (let i = 1; i < report.length; i++) {
+		differences.push(report[i] - report[i - 1]);
 	}
 
 	const increasing = differences.every((d) => d >= 1 && d <= 3);
@@ -21,10 +21,11 @@ function day02() {
 	let madeSafe = 0;
 
 	for (const report of reports) {
+		const reportSafe = isSafe(report);
 		let tolerable = false;
 
 		for (let i = 0; i < report.length; i++) {
-			const removed = [...report.slice(0, i), ...report.slice(i + 1)];
+			const removed = report.toSpliced(i, 1);
 
 			if (isSafe(removed)) {
 				tolerable = true;
@@ -32,8 +33,8 @@ function day02() {
 			}
 		}
 
-		if (isSafe(report)) safe++;
-		if (isSafe(report) || tolerable) madeSafe++;
+		if (reportSafe) safe++;
+		if (reportSafe || tolerable) madeSafe++;
 	}
 
 	return [safe, madeSafe];
