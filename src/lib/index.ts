@@ -2,7 +2,6 @@ import assert from "node:assert";
 import util from "node:util";
 
 export * from "./ocr";
-export * from "./util";
 
 util.inspect.defaultOptions.numericSeparator = true;
 
