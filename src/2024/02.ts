@@ -1,5 +1,5 @@
 import input from "$input/2024/02.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
 function isSafe(report: number[]) {
 	const differences: number[] = [];
@@ -14,7 +14,7 @@ function isSafe(report: number[]) {
 	return increasing || decreasing;
 }
 
-function day02() {
+export default function day02() {
 	const reports = input.split("\n").map((line) => line.split(" ").map(Number));
 
 	let safe = 0;
@@ -40,4 +40,4 @@ function day02() {
 	return [safe, madeSafe];
 }
 
-solve("Day 2: Red-Nosed Reports", day02, [220, 296]);
+register(day02, "Red-Nosed Reports", [220, 296]);
