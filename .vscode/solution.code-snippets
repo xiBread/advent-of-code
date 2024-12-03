@@ -6,7 +6,7 @@
 			"import input from \"\\$input/${TM_DIRECTORY/.+?(\\d+)/$1/}/${TM_FILENAME_BASE}.txt\";",
 			"import { register } from \"\\$lib/aoc\";",
 			"",
-			"function day${TM_FILENAME_BASE}() {",
+			"export default function day${TM_FILENAME_BASE}() {",
 			"\t$0",
 			"}",
 			"",
