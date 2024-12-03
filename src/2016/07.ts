@@ -1,7 +1,7 @@
 import input from "$input/2016/07.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
-function day07() {
+export default function day07() {
 	const addresses = input.split("\n");
 
 	let tls = 0;
@@ -24,4 +24,4 @@ function day07() {
 	return [tls, ssl];
 }
 
-solve("Day 7: Internet Protocol Version 7", day07, [115, 231]);
+register(day07, "Internet Protocol Version 7", [115, 231]);

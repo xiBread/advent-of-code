@@ -1,5 +1,5 @@
 import input from "$input/2017/10.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
 function hash(list: number[], pos: number, skip: number, lengths: number[], rounds: number) {
 	if (!rounds) return list;
@@ -17,7 +17,7 @@ function hash(list: number[], pos: number, skip: number, lengths: number[], roun
 	return hash(list, pos, skip, lengths, rounds - 1);
 }
 
-function day10() {
+export default function day10() {
 	const lengths = input.split(",").map(Number);
 
 	const codes = [...input].map((c) => c.charCodeAt(0));
@@ -37,4 +37,4 @@ function day10() {
 	return [list[0] * list[1], dense.map((n) => n.toString(16).padStart(2, "0")).join("")];
 }
 
-solve("Day 10: Knot Hash", day10, [62_238, "2b0c9cc0449507a0db3babd57ad9e8d8"]);
+register(day10, "Knot Hash", [62_238, "2b0c9cc0449507a0db3babd57ad9e8d8"]);

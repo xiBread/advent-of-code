@@ -1,7 +1,7 @@
 import input from "$input/2017/18.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
 // TODO
-function day18() {}
+export default function day18() {}
 
-solve("Day 18: Duet", day18, [3423, 7493]);
+register(day18, "Duet", [3423, 7493]);

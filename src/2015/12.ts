@@ -1,5 +1,5 @@
 import input from "$input/2015/12.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
 import { sum } from "c8n";
 
@@ -19,8 +19,8 @@ function filter(object: object): number {
 	return filter(Object.values(object));
 }
 
-function day12() {
+export default function day12() {
 	return [eval(input.replace(/[^-\d]+/g, "+") + 0), filter(JSON.parse(input))];
 }
 
-solve("Day 12: JSAbacusFramework.io", day12, [191_164, 87_842]);
+register(day12, "JSAbacusFramework.io", [191_164, 87_842]);

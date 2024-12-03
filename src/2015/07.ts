@@ -1,7 +1,7 @@
 import input from "$input/2015/07.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
-function day07() {
+export default function day07() {
 	let signals = {};
 
 	const template = "const $4 = _ => signals.$4 ??= $1() $2 $3()";
@@ -30,4 +30,4 @@ function day07() {
 	return [a, connect()];
 }
 
-solve("Day 7: Some Assembly Required", day07, [46_065, 14_134]);
+register(day07, "Some Assembly Required", [46_065, 14_134]);

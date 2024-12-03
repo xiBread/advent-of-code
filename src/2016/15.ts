@@ -1,7 +1,7 @@
 import input from "$input/2016/15.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
-function day15() {
+export default function day15() {
 	const discs = input.split("\n").map((line) => {
 		const [, positions, start] = / (\d+).+?(\d+)\./.exec(line)!;
 
@@ -24,4 +24,4 @@ function day15() {
 	return [first, wait()];
 }
 
-solve("Day 15: Timing is Everything", day15, [148_737, 2_353_212]);
+register(day15, "Timing is Everything", [148_737, 2_353_212]);

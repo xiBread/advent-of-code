@@ -1,7 +1,7 @@
 import input from "$input/2015/15.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
-function day15() {
+export default function day15() {
 	const values = input.split("\n").map((line) => line.match(/-?\d+/g)!.map(Number));
 
 	function score(amounts: number[]) {
@@ -65,4 +65,4 @@ function day15() {
 	return [optimize(), optimize(500)];
 }
 
-solve("Day 15: Science for Hungry People", day15, [18_965_440, 15_862_900]);
+register(day15, "Science for Hungry People", [18_965_440, 15_862_900]);

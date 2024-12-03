@@ -1,7 +1,7 @@
 import crypto from "node:crypto";
 
 import input from "$input/2016/14.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
 function md5(data: string) {
 	return crypto.createHash("md5").update(data).digest("hex");
@@ -18,7 +18,7 @@ function stretch(data: string) {
 }
 
 // Same sentiments as Day 5
-function day14() {
+export default function day14() {
 	function generate(secure = false) {
 		const hashes = new Map<number, string>();
 		const keys: number[] = [];
@@ -57,4 +57,4 @@ function day14() {
 	return [generate(), generate(true)];
 }
 
-solve("Day 14: One-Time Pad", day14, [18_626, 20_092]);
+register(day14, "One-Time Pad", [18_626, 20_092]);

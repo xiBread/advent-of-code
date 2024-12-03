@@ -8,14 +8,15 @@
 		"printWidth": 100
 	},
 	"scripts": {
-		"solve": "tsx --disable-warning=ExperimentalWarning solve.js",
+		"solve": "tsx --disable-warning=ExperimentalWarning src/solve.ts",
 		"style": "pnpm lint:fix && pnpm prettier",
 		"lint": "eslint .",
 		"lint:fix": "eslint . --fix",
 		"prettier": "prettier -w ."
 	},
 	"dependencies": {
-		"c8n": "^0.1.1"
+		"c8n": "^0.1.1",
+		"table": "^6.8.2"
 	},
 	"devDependencies": {
 		"@antfu/eslint-config": "^3.8.0",

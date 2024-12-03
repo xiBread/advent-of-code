@@ -1,7 +1,7 @@
 import input from "$input/2017/17.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
-function day17() {
+export default function day17() {
 	const steps = Number(input);
 	const buffer = [0];
 
@@ -22,4 +22,4 @@ function day17() {
 	return [buffer[x + 1], value];
 }
 
-solve("Day 17: Two Steps Forward", day17, [180, 13_326_437]);
+register(day17, "Two Steps Forward", [180, 13_326_437]);

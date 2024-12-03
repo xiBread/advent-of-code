@@ -1,9 +1,9 @@
 import input from "$input/2015/05.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
 import { count } from "c8n";
 
-function day05() {
+export default function day05() {
 	const strings = input.split("\n");
 
 	const vowels = /(?:[aeiou].*){3,}/;
@@ -19,4 +19,4 @@ function day05() {
 	];
 }
 
-solve("Day 5: Doesn't He Have Intern-Elves For This?", day05, [236, 51]);
+register(day05, "Doesn't He Have Intern-Elves For This?", [236, 51]);

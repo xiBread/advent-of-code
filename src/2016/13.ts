@@ -1,5 +1,5 @@
 import input from "$input/2016/13.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
 import { count } from "c8n";
 
@@ -12,7 +12,7 @@ function isWall(x: number, y: number) {
 	return ones % 2 === 1;
 }
 
-function day13() {
+export default function day13() {
 	const visited: Record<string, number> = { "1,1": 0 };
 	const maze = { points: [[1, 1]], pos: 0, end: 0 };
 
@@ -48,4 +48,4 @@ function day13() {
 	return [visited[TARGET], locations];
 }
 
-solve("Day 13: A Maze of Twisty Little Cubicles", day13, [92, 124]);
+register(day13, "A Maze of Twisty Little Cubicles", [92, 124]);

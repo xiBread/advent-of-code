@@ -1,9 +1,9 @@
 import input from "$input/2016/11.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
 import { sum } from "c8n";
 
-function day11() {
+export default function day11() {
 	const parts = input.split("\n").map((line) => line.match(/\ba\b/g)?.length ?? 0);
 
 	function move(parts: number[]) {
@@ -19,4 +19,4 @@ function day11() {
 	return [move(parts), move([parts[0] + 4, ...parts.slice(1)])];
 }
 
-solve("Day 11: Radioisotope Thermoelectric Generators", day11, [47, 71]);
+register(day11, "Radioisotope Thermoelectric Generators", [47, 71]);

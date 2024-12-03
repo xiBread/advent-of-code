@@ -1,9 +1,9 @@
 import input from "$input/2016/06.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
 import { zip } from "c8n";
 
-function day06() {
+export default function day06() {
 	const message = input.split("\n").map((line) => [...line]);
 
 	let corrected = "";
@@ -25,4 +25,4 @@ function day06() {
 	return [corrected, original];
 }
 
-solve("Day 6: Signals and Noise", day06, ["liwvqppc", "caqfbzlh"]);
+register(day06, "Signals and Noise", ["liwvqppc", "caqfbzlh"]);

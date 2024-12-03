@@ -1,7 +1,7 @@
 import input from "$input/2016/12.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
-function day12() {
+export default function day12() {
 	const instructions = input
 		.split("\n")
 		.map((line) => /(\w{3}) (\w+)(?: (-?\w+))?/.exec(line)!.slice(1));
@@ -32,4 +32,4 @@ function day12() {
 	return [execute(), execute(1)];
 }
 
-solve("Day 12: Leonardo's Monorail", day12, [318_003, 9_227_657]);
+register(day12, "Leonardo's Monorail", [318_003, 9_227_657]);

@@ -1,7 +1,7 @@
 import input from "$input/2017/03.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
-function day03() {
+export default function day03() {
 	const square = Number(input);
 	const grid: Record<string, number> = { "0,0": 1 };
 
@@ -33,4 +33,4 @@ function day03() {
 	return [center - 1 + (center - (square % size)), value];
 }
 
-solve("Day 3: Spiral Memory", day03, [552, 330785]);
+register(day03, "Spiral Memory", [552, 330785]);

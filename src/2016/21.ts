@@ -1,7 +1,7 @@
 import input from "$input/2016/21.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
 // TODO
-function day21() {}
+export default function day21() {}
 
-solve("Day 21: Scrambled Letters and Hash", day21, ["bgfacdeh", "bdgheacf"]);
+register(day21, "Scrambled Letters and Hash", ["bgfacdeh", "bdgheacf"]);

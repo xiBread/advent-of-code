@@ -1,7 +1,7 @@
 import input from "$input/2017/05.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
-function day05() {
+export default function day05() {
 	const instructions = input.split("\n").map(Number);
 
 	function jump(decrease = false) {
@@ -26,4 +26,4 @@ function day05() {
 	return [jump(), jump(true)];
 }
 
-solve("Day 5: A Maze of Twisty Trampolines, All Alike", day05, [364_539, 27_477_714]);
+register(day05, "A Maze of Twisty Trampolines, All Alike", [364_539, 27_477_714]);

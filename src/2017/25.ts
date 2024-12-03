@@ -1,10 +1,10 @@
 import input from "$input/2017/25.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
 type State = "A" | "B" | "C" | "D" | "E" | "F";
 type Rule = [write: number, move: boolean, state: State];
 
-function day25() {
+export default function day25() {
 	const [instructions, ...blueprint] = input.split("\n\n");
 
 	const steps = Number(instructions.match(/\d+/)![0]);
@@ -40,4 +40,4 @@ function day25() {
 	return Object.values(tape).reduce((a, b) => a + b);
 }
 
-solve("Day 25: The Halting Problem", day25, 2474);
+register(day25, "The Halting Problem", 2474);

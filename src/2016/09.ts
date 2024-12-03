@@ -1,5 +1,5 @@
 import input from "$input/2016/09.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
 type Fn = (fn: Fn, file: string) => number;
 
@@ -21,8 +21,8 @@ function decompress(fn: Fn, file = input) {
 	return length;
 }
 
-function day09() {
+export default function day09() {
 	return [decompress((_, file) => file.length), decompress(decompress)];
 }
 
-solve("Day 9: Explosives in Cyberspace", day09, [97_714, 10_762_972_461]);
+register(day09, "Explosives in Cyberspace", [97_714, 10_762_972_461]);

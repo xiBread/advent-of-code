@@ -1,5 +1,5 @@
 import input from "$input/2015/22.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
 interface Turn {
 	boss: { hp: number; dmg: number };
@@ -9,7 +9,7 @@ interface Turn {
 	spent: number;
 }
 
-function day22() {
+export default function day22() {
 	const [hp, dmg] = input.match(/(\d+)/gm)!.map(Number);
 
 	const spells = {
@@ -102,4 +102,4 @@ function day22() {
 	return [play(), play(true)];
 }
 
-solve("Day 22: Wizard Simulator 20XX", day22, [1824, 1937]);
+register(day22, "Wizard Simulator 20XX", [1824, 1937]);

@@ -1,7 +1,7 @@
 import input from "$input/2017/06.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
-function day06() {
+export default function day06() {
 	const banks = input.split(/\s+/).map(Number);
 	const seen: Record<string, number> = {};
 
@@ -27,4 +27,4 @@ function day06() {
 	return [cycles, cycles - seen[config]];
 }
 
-solve("Day 6: Memory Reallocation", day06, [4074, 2793]);
+register(day06, "Memory Reallocation", [4074, 2793]);

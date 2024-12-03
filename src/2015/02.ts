@@ -1,7 +1,7 @@
 import input from "$input/2015/02.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
-function day02() {
+export default function day02() {
 	const dimensions = input.split("\n").map((line) => line.split("x").map(Number));
 
 	let paper = 0;
@@ -17,4 +17,4 @@ function day02() {
 	return [paper, ribbon];
 }
 
-solve("Day 2: I Was Told There Would Be No Math", day02, [1_588_178, 3_783_758]);
+register(day02, "I Was Told There Would Be No Math", [1_588_178, 3_783_758]);

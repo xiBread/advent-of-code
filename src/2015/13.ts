@@ -1,9 +1,9 @@
 import input from "$input/2015/13.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
 import { permutations } from "c8n";
 
-function day13() {
+export default function day13() {
 	const seating = input.split("\n").map((line) => /(\w+).+?(\w+) (\d+).+?(\w+)\./.exec(line)!);
 	const table: Record<string, Record<string, number>> = {};
 
@@ -39,4 +39,4 @@ function day13() {
 	return [others, optimize()];
 }
 
-solve("Day 13: Knights of the Dinner Table", day13, [618, 601]);
+register(day13, "Knights of the Dinner Table", [618, 601]);

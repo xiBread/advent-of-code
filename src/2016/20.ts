@@ -1,7 +1,7 @@
 import input from "$input/2016/20.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
-function day20() {
+export default function day20() {
 	const ranges = input
 		.split("\n")
 		.map((line) => line.split("-").map(Number))
@@ -24,4 +24,4 @@ function day20() {
 	return [lowest, allowed];
 }
 
-solve("Day 20: Firewall Rules", day20, [19_449_262, 119]);
+register(day20, "Firewall Rules", [19_449_262, 119]);

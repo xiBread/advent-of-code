@@ -1,5 +1,5 @@
 import input from "$input/2016/10.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
 interface Bot {
 	chips: Set<number>;
@@ -19,7 +19,7 @@ function balance(bot: Bot, chip: number) {
 	}
 }
 
-function day10() {
+export default function day10() {
 	const instructions = input.split("\n");
 
 	const output: Record<string, number> = {};
@@ -56,4 +56,4 @@ function day10() {
 	];
 }
 
-solve("Day 10: Balance Bots", day10, [86, 22_847]);
+register(day10, "Balance Bots", [86, 22_847]);

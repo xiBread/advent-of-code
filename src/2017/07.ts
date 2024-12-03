@@ -1,5 +1,5 @@
 import input from "$input/2017/07.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
 import { groupBy } from "c8n";
 
@@ -8,7 +8,7 @@ interface Program {
 	children: string[];
 }
 
-function day07() {
+export default function day07() {
 	const list = input.split("\n").map((line) => /(\w+) .(\d+)(?:.+> (.+))?/.exec(line)!);
 	const programs = new Map<string, Program>();
 
@@ -65,4 +65,4 @@ function day07() {
 	return [bottom, program.weight + (target - totalWeight(incorrect))];
 }
 
-solve("Day 7: Recursive Circus", day07, ["rqwgj", 333]);
+register(day07, "Recursive Circus", ["rqwgj", 333]);

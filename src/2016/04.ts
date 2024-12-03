@@ -1,7 +1,7 @@
 import input from "$input/2016/04.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
-function day04() {
+export default function day04() {
 	const rooms = input.split("\n").map((line) => line.match(/(\w+)/g)!);
 
 	let sum = 0;
@@ -38,4 +38,4 @@ function day04() {
 	return [sum, id];
 }
 
-solve("Day 4: Security Through Obscurity", day04, [278_221, 267]);
+register(day04, "Security Through Obscurity", [278_221, 267]);

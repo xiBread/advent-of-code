@@ -1,10 +1,10 @@
 import input from "$input/2015/17.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 import { sum } from "c8n";
 
 const LITERS = 150;
 
-function day17() {
+export default function day17() {
 	const sizes = input.split("\n").map(Number);
 	const containers: Record<string, number> = {};
 
@@ -19,4 +19,4 @@ function day17() {
 	return [sum(Object.values(containers)), containers[Object.keys(containers)[0]]];
 }
 
-solve("Day 17: No Such Thing as Too Much", day17, [4372, 4]);
+register(day17, "No Such Thing as Too Much", [4372, 4]);

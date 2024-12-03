@@ -1,7 +1,7 @@
 import input from "$input/2015/01.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
-function day01() {
+export default function day01() {
 	return [...input].reduce(
 		([floor, position], char, i) => [
 			floor + (char === "(" ? 1 : -1),
@@ -11,4 +11,4 @@ function day01() {
 	);
 }
 
-solve("Day 1: Not Quite Lisp", day01, [74, 1795]);
+register(day01, "Not Quite Lisp", [74, 1795]);

@@ -1,7 +1,7 @@
 import input from "$input/2017/14.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
 // TODO
-function day14() {}
+export default function day14() {}
 
-solve("Day 14: Disk Defragmentation", day14, [8106, 1164]);
+register(day14, "Disk Defragmentation", [8106, 1164]);

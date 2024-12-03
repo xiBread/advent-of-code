@@ -1,12 +1,12 @@
 import input from "$input/2015/06.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
 import { sum } from "c8n";
 
 const WIDTH = 1000;
 const HEIGHT = 1000;
 
-function day06() {
+export default function day06() {
 	const instructions = input.split("\n").map((line) => line.split(/[ ,]/));
 
 	const grid = Array.from({ length: WIDTH * HEIGHT }, () => 0);
@@ -37,4 +37,4 @@ function day06() {
 	return [sum(grid), sum(copy)];
 }
 
-solve("Day 6: Probably a Fire Hazard", day06, [543_903, 14_687_245]);
+register(day06, "Probably a Fire Hazard", [543_903, 14_687_245]);

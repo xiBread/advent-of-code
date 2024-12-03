@@ -1,5 +1,5 @@
 import input from "$input/2015/03.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
 function visit(santas: number) {
 	const houses = new Set(["0,0"]);
@@ -21,8 +21,8 @@ function visit(santas: number) {
 	return houses.size;
 }
 
-function day03() {
+export default function day03() {
 	return [visit(1), visit(2)];
 }
 
-solve("Day 3: Perfectly Spherical Houses in a Vacuum", day03, [2081, 2341]);
+register(day03, "Perfectly Spherical Houses in a Vacuum", [2081, 2341]);

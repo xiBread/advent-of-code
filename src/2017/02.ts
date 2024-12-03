@@ -1,7 +1,7 @@
 import input from "$input/2017/02.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
-function day02() {
+export default function day02() {
 	const rows = input.split("\n").map((line) =>
 		line
 			.split(/\s+/)
@@ -25,4 +25,4 @@ function day02() {
 	return [rows.reduce((sum, row) => sum + row.at(-1)! - row[0], 0), sum];
 }
 
-solve("Day 2: Corruption Checksum", day02, [47_136, 250]);
+register(day02, "Corruption Checksum", [47_136, 250]);

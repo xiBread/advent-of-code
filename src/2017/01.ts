@@ -1,5 +1,5 @@
 import input from "$input/2017/01.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
 function find(offset = 1) {
 	let solution = 0;
@@ -13,8 +13,8 @@ function find(offset = 1) {
 	return solution;
 }
 
-function day01() {
+export default function day01() {
 	return [find(), find(input.length / 2)];
 }
 
-solve("Day 1: Inverse Captcha", day01, [1029, 1220]);
+register(day01, "Inverse Captcha", [1029, 1220]);

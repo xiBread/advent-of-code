@@ -1,7 +1,7 @@
 import input from "$input/2015/23.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
-function day23() {
+export default function day23() {
 	const instructions = input
 		.split("\n")
 		.map((line) => /(\w{3}) ([-+]?\w+)(?:.+?([-+]\d+))?/.exec(line)!.slice(1));
@@ -36,4 +36,4 @@ function day23() {
 	return [execute(), execute(1)];
 }
 
-solve("Day 23: Opening the Turing Lock", day23, [170, 247]);
+register(day23, "Opening the Turing Lock", [170, 247]);

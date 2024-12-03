@@ -1,7 +1,7 @@
 import input from "$input/2017/16.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
-function day16() {
+export default function day16() {
 	const moves = input.split(",");
 
 	const program = [..."abcdefghijklmnop"];
@@ -37,4 +37,4 @@ function day16() {
 	return [programs[0], programs[(1e9 % programs.length) - 1]];
 }
 
-solve("Day 16: Permutation Promenade", day16, ["hmefajngplkidocb", "fbidepghmjklcnoa"]);
+register(day16, "Permutation Promenade", ["hmefajngplkidocb", "fbidepghmjklcnoa"]);

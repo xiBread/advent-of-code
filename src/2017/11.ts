@@ -1,7 +1,7 @@
 import input from "$input/2017/11.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
-function day11() {
+export default function day11() {
 	const position = { x: 0, y: 0, z: 0 };
 	const distances: number[] = [];
 
@@ -35,4 +35,4 @@ function day11() {
 	return [distance(position), Math.max(...distances)];
 }
 
-solve("Day 11: Hex Ed", day11, [796, 1585]);
+register(day11, "Hex Ed", [796, 1585]);

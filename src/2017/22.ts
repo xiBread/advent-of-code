@@ -1,9 +1,9 @@
 import input from "$input/2017/22.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
 type NodeStatus = "clean" | "weakened" | "infected" | "flagged";
 
-function day22() {
+export default function day22() {
 	const map = input.split("\n");
 
 	const nodes = new Map<string, NodeStatus>();
@@ -68,4 +68,4 @@ function day22() {
 	return [burst(10_000), burst(10_000_000, true)];
 }
 
-solve("Day 22: Sporifica Virus", day22, [5565, 2_511_978]);
+register(day22, "Sporifica Virus", [5565, 2_511_978]);

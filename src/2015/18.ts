@@ -1,5 +1,5 @@
 import input from "$input/2015/18.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
 import { sum } from "c8n";
 
@@ -7,7 +7,7 @@ const HEIGHT = 100;
 const WIDTH = 100;
 const STEPS = 100;
 
-function day18() {
+export default function day18() {
 	const grid = input.split(/\n|/);
 
 	function setCorners(lights: number[]) {
@@ -62,4 +62,4 @@ function day18() {
 	return [animate(), animate(true)];
 }
 
-solve("Day 18: Like a GIF For Your Yard", day18, [768, 781]);
+register(day18, "Like a GIF For Your Yard", [768, 781]);

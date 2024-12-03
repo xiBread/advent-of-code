@@ -1,7 +1,7 @@
 import input from "$input/2017/19.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
-function day19() {
+export default function day19() {
 	const diagram = input.split("\n");
 
 	let letters = "";
@@ -35,4 +35,4 @@ function day19() {
 	return [letters, steps];
 }
 
-solve("Day 19: A Series of Tubes", day19, ["VTWBPYAQFU", 17_358]);
+register(day19, "A Series of Tubes", ["VTWBPYAQFU", 17_358]);

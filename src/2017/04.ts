@@ -1,9 +1,9 @@
 import input from "$input/2017/04.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
 import { count } from "c8n";
 
-function day04() {
+export default function day04() {
 	const passphrases = input.split("\n").map((line) => line.split(" "));
 
 	return [
@@ -12,4 +12,4 @@ function day04() {
 	];
 }
 
-solve("Day 4: High-Entropy Passphrases", day04, [337, 231]);
+register(day04, "High-Entropy Passphrases", [337, 231]);

@@ -1,9 +1,9 @@
 import input from "$input/2015/09.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
 import { minmax, permutations, windows } from "c8n";
 
-function day09() {
+export default function day09() {
 	const locations = input.split("\n").map((line) => line.match(/([A-Z]\w+|\d+)/g)!);
 	const routes: Record<string, Record<string, number>> = {};
 
@@ -27,4 +27,4 @@ function day09() {
 	return minmax(distances);
 }
 
-solve("Day 9: All in a Single Night", day09, [251, 898]);
+register(day09, "All in a Single Night", [251, 898]);

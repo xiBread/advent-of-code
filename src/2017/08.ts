@@ -1,7 +1,7 @@
 import input from "$input/2017/08.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
-function day08() {
+export default function day08() {
 	const registers: Record<string, number> = {};
 	// eslint-disable-next-line prefer-const
 	let highest = -Infinity;
@@ -38,4 +38,4 @@ function day08() {
 	return [Math.max(...Object.values(registers)), highest];
 }
 
-solve("Day 8: I Heard You Like Registers", day08, [4416, 5199]);
+register(day08, "I Heard You Like Registers", [4416, 5199]);

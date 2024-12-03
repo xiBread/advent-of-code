@@ -1,5 +1,5 @@
 import input from "$input/2017/21.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
 import { count } from "c8n";
 
@@ -19,7 +19,7 @@ function flip(grid: string[]) {
 	return grid.map((row) => [...row].reverse().join(""));
 }
 
-function day21() {
+export default function day21() {
 	const book = input.split("\n");
 	const rules = new Map<string, string[]>();
 
@@ -82,4 +82,4 @@ function day21() {
 	return [generate(5), generate(18)];
 }
 
-solve("Day 21: Fractal Art", day21, [160, 2_271_537]);
+register(day21, "Fractal Art", [160, 2_271_537]);

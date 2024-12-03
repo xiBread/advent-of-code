@@ -15,9 +15,6 @@
 			"$input/*": [
 				"./input/*"
 			],
-			"$lib": [
-				"./src/lib"
-			],
 			"$lib/*": [
 				"./src/lib/*"
 			],

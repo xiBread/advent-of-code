@@ -1,5 +1,5 @@
 import input from "$input/2015/11.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
 function increasing(password: string) {
 	for (let i = 0; i < password.length - 3; i++) {
@@ -40,9 +40,9 @@ function next(password: string) {
 	return password;
 }
 
-function day11() {
+export default function day11() {
 	const first = next(input);
 	return [first, next(first)];
 }
 
-solve("Day 11: Corporate Policy", day11, ["vzbxxyzz", "vzcaabcc"]);
+register(day11, "Corporate Policy", ["vzbxxyzz", "vzcaabcc"]);

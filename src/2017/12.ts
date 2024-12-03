@@ -1,7 +1,7 @@
 import input from "$input/2017/12.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
-function day12() {
+export default function day12() {
 	const directIds = input.split("\n").map((line) => line.split(">")[1].split(",").map(Number));
 	const visited = new Set<number>();
 
@@ -17,4 +17,4 @@ function day12() {
 	return [programs[0], programs.filter((p) => p > 0).length];
 }
 
-solve("Day 12: Digital Plumber", day12, [239, 215]);
+register(day12, "Digital Plumber", [239, 215]);

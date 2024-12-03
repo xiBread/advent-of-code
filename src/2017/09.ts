@@ -1,9 +1,9 @@
 import input from "$input/2017/09.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
 import { sum } from "c8n";
 
-function day09() {
+export default function day09() {
 	const stream = input.replace(/!./g, "");
 
 	let total = 0;
@@ -24,4 +24,4 @@ function day09() {
 	];
 }
 
-solve("Day 9: Stream Processing", day09, [14_190, 7053]);
+register(day09, "Stream Processing", [14_190, 7053]);

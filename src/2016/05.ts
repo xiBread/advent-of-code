@@ -1,10 +1,10 @@
 import crypto from "node:crypto";
 
 import input from "$input/2016/05.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
 // Average ~20s; unaware of any way to speed this up unfortunately
-function day05() {
+export default function day05() {
 	let oldPassword = "";
 	const newPassword: string[] = [];
 
@@ -36,4 +36,4 @@ function day05() {
 	return [oldPassword, newPassword.join("")];
 }
 
-solve("Day 5: How About a Nice Game of Chess", day05, ["d4cd2ee1", "f2c730e5"]);
+register(day05, "How About a Nice Game of Chess", ["d4cd2ee1", "f2c730e5"]);

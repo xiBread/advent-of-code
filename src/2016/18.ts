@@ -1,9 +1,9 @@
 import input from "$input/2016/18.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
 import { sum } from "c8n";
 
-function day18() {
+export default function day18() {
 	function scan(rows: number) {
 		let tiles = [...input].map<number>((tile) => (tile === "." ? 1 : 0));
 		let safe = sum(tiles);
@@ -28,4 +28,4 @@ function day18() {
 	return [scan(40), scan(400_000)];
 }
 
-solve("Day 18: Like a Rogue", day18, [1956, 19_995_121]);
+register(day18, "Like a Rogue", [1956, 19_995_121]);

@@ -1,5 +1,5 @@
 import input from "$input/2016/22.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
 interface Node {
 	x: number;
@@ -15,7 +15,7 @@ interface State {
 	steps: number;
 }
 
-function day22() {
+export default function day22() {
 	const nodes = input
 		.split("\n")
 		.slice(2)
@@ -111,4 +111,4 @@ function day22() {
 	return [pairs, steps];
 }
 
-solve("Day 22: Grid Computing", day22, [888, 236]);
+register(day22, "Grid Computing", [888, 236]);

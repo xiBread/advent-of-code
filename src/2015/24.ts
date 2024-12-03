@@ -1,9 +1,9 @@
 import input from "$input/2015/24.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
 import { product, sum } from "c8n";
 
-function day24() {
+export default function day24() {
 	const weights = input.split("\n").map(Number);
 
 	function optimize(groups: number) {
@@ -36,4 +36,4 @@ function day24() {
 	return [optimize(3), optimize(4)];
 }
 
-solve("Day 24: It Hangs in the Balance", day24, [10_723_906_903, 74_850_409]);
+register(day24, "It Hangs in the Balance", [10_723_906_903, 74_850_409]);

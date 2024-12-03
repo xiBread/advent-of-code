@@ -1,12 +1,12 @@
 import input from "$input/2016/02.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
 enum Layout {
 	Square,
 	Diamond,
 }
 
-function day02() {
+export default function day02() {
 	const keypad: Record<string, string[]> = {
 		U: ["123123456", "121452349678B"],
 		D: ["456789789", "36785ABC9ADCD"],
@@ -34,4 +34,4 @@ function day02() {
 	return [decode(Layout.Square), decode(Layout.Diamond)];
 }
 
-solve("Day 2: Bathroom Security", day02, [44_558, "6BBAD"]);
+register(day02, "Bathroom Security", [44_558, "6BBAD"]);

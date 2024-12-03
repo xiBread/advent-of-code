@@ -1,12 +1,12 @@
 import input from "$input/2016/08.txt";
-import { ocr, solve } from "$lib";
+import { ocr, register } from "$lib/aoc";
 
 import { sum } from "c8n";
 
 const WIDTH = 50;
 const HEIGHT = 6;
 
-function day08() {
+export default function day08() {
 	const instructions = input.split("\n");
 
 	const screen = Array.from({ length: HEIGHT }, () => Array.from({ length: WIDTH }, () => 0));
@@ -39,4 +39,4 @@ function day08() {
 	return [sum(screen.flat()), ocr(screen)];
 }
 
-solve("Day 8: Two-Factor Authentication", day08, [116, "UPOJFLBCEZ"]);
+register(day08, "Two-Factor Authentication", [116, "UPOJFLBCEZ"]);

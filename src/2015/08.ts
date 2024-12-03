@@ -1,9 +1,9 @@
 import input from "$input/2015/08.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
 import { sum } from "c8n";
 
-function day08() {
+export default function day08() {
 	const strings = input.split("\n");
 
 	return [
@@ -14,4 +14,4 @@ function day08() {
 	];
 }
 
-solve("Day 8: Matchsticks", day08, [1342, 2074]);
+register(day08, "Matchsticks", [1342, 2074]);

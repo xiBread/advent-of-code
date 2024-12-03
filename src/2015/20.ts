@@ -1,7 +1,7 @@
 import input from "$input/2015/20.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
-function day20() {
+export default function day20() {
 	const presents = Number(input);
 	const max = presents / 10;
 
@@ -32,4 +32,4 @@ function day20() {
 	return [min(infinite), min(limited)];
 }
 
-solve("Day 20: Infinite Elves and Infinite Houses", day20, [665_280, 705_600]);
+register(day20, "Infinite Elves and Infinite Houses", [665_280, 705_600]);

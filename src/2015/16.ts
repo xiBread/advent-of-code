@@ -1,7 +1,7 @@
 import input from "$input/2015/16.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
-function day16() {
+export default function day16() {
 	const aunts = input.split("\n").map((line) => line.replace(/:/g, ""));
 
 	const tape = {
@@ -49,4 +49,4 @@ function day16() {
 	return [find(a), find(b)];
 }
 
-solve("Day 16: Aunt Sue", day16, [40, 241]);
+register(day16, "Aunt Sue", [40, 241]);

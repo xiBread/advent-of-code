@@ -1,7 +1,7 @@
 import input from "$input/2017/24.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
-function day24() {
+export default function day24() {
 	const components = input.split("\n").map((line) => {
 		const [a, b] = line.split("/").map(Number);
 		return { a, b, used: false };
@@ -41,4 +41,4 @@ function day24() {
 	return [strongest, strengths.at(-1)!];
 }
 
-solve("Day 24: Electromagnetic Moat", day24, [1695, 1673]);
+register(day24, "Electromagnetic Moat", [1695, 1673]);

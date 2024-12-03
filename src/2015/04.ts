@@ -1,7 +1,7 @@
 import crypto from "node:crypto";
 
 import input from "$input/2015/04.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
 function mine(zeroes: number) {
 	for (let i = 0; ; i++) {
@@ -16,8 +16,8 @@ function mine(zeroes: number) {
 	}
 }
 
-function day04() {
+export default function day04() {
 	return [mine(5), mine(6)];
 }
 
-solve("Day 4: The Ideal Stocking Stuffer", day04, [254_575, 1_038_736]);
+register(day04, "The Ideal Stocking Stuffer", [254_575, 1_038_736]);

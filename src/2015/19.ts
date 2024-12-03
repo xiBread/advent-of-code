@@ -1,7 +1,7 @@
 import input from "$input/2015/19.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
-function day19() {
+export default function day19() {
 	const replacements = input
 		.split("\n\n")[0]
 		.split("\n")
@@ -27,4 +27,4 @@ function day19() {
 	return [distinct.size, steps];
 }
 
-solve("Day 19: Medicine for Rudolph", day19, [576, 207]);
+register(day19, "Medicine for Rudolph", [576, 207]);

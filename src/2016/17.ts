@@ -1,7 +1,7 @@
 import crypto from "node:crypto";
 
 import input from "$input/2016/17.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
 const moves: Record<string, (x: number, y: number) => number[]> = {
 	U: (x, y) => [x, y - 1],
@@ -41,10 +41,10 @@ function traverse(start: number[], target: number[]) {
 	return paths;
 }
 
-function day17() {
+export default function day17() {
 	const paths = traverse([0, 0], [3, 3]);
 
 	return [paths[0], paths.at(-1)!.length];
 }
 
-solve("Day 17: Two Steps Forward", day17, ["RDDRULDDRR", 766]);
+register(day17, "Two Steps Forward", ["RDDRULDDRR", 766]);

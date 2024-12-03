@@ -1,5 +1,5 @@
 import input from "$input/2015/21.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
 import { combinations } from "c8n";
 
@@ -9,7 +9,7 @@ interface Entity {
 	armor: number;
 }
 
-function day21() {
+export default function day21() {
 	const [hp, dmg, armor] = input.match(/(\d+)/gm)!.map(Number);
 
 	const shop = {
@@ -82,4 +82,4 @@ function day21() {
 	return [least, most];
 }
 
-solve("Day 21: RPG Simulator 20XX", day21, [121, 201]);
+register(day21, "RPG Simulator 20XX", [121, 201]);

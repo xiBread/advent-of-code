@@ -1,11 +1,11 @@
 import input from "$input/2017/15.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
 const GEN_A_FACTOR = 16_807;
 const GEN_B_FACTOR = 48_271;
 const DIVISOR = 2_147_483_647;
 
-function day15() {
+export default function day15() {
 	const [a, b] = input.match(/\d+/g)!.map(Number);
 
 	function* generate(value: number, factor: number, multiple = 1) {
@@ -36,4 +36,4 @@ function day15() {
 	return [matches(40_000_000, a, b), matches(5_000_000, a, b, 4, 8)];
 }
 
-solve("Day 15: Dueling Generators", day15, [577, 316]);
+register(day15, "Dueling Generators", [577, 316]);

@@ -1,5 +1,5 @@
 import input from "$input/2015/25.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
 // Separators don't make sense logically, but the number is obviously the
 // date 2015/11/25, so I figured it'd look nicer to display it as such.
@@ -23,7 +23,7 @@ function modexp(base: number, exp: number, mod: number) {
 	return n;
 }
 
-function day25() {
+export default function day25() {
 	const [row, col] = input.match(/\d+/g)!.map(Number);
 
 	return (
@@ -32,4 +32,4 @@ function day25() {
 	);
 }
 
-solve("Day 25: Let It Snow", day25, 9_132_360);
+register(day25, "Let It Snow", 9_132_360);

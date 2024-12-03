@@ -1,8 +1,8 @@
 import input from "$input/2016/01.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 import { manhattan } from "$lib/math";
 
-function day01() {
+export default function day01() {
 	const units = input.split(", ").map((line) => [line[0], line.slice(1)]);
 
 	const position = [0, 0];
@@ -27,4 +27,4 @@ function day01() {
 	return [manhattan(position), twice];
 }
 
-solve("Day 1: No Time for a Taxicab", day01, [287, 133]);
+register(day01, "No Time for a Taxicab", [287, 133]);

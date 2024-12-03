@@ -1,5 +1,5 @@
 import input from "$input/2016/16.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
 // https://graphics.stanford.edu/%7Eseander/bithacks.html#CountBitsSetParallel
 function popcnt(n: bigint) {
@@ -16,7 +16,7 @@ function parity(n: bigint) {
 	return (ones ^ gray) & 1n;
 }
 
-function day16() {
+export default function day16() {
 	const initialLength = BigInt(input.length);
 
 	// Parity of initial state
@@ -66,4 +66,4 @@ function day16() {
 	return [generate(272), generate(35_651_584)];
 }
 
-solve("Day 16: Dragon Checksum", day16, ["10010100110011100", "01100100101101100"]);
+register(day16, "Dragon Checksum", ["10010100110011100", "01100100101101100"]);

@@ -1,9 +1,9 @@
 import input from "$input/2016/03.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
 const isPossible = ([a, b, c]: number[]) => a + b > c && a + c > b && b + c > a;
 
-function day03() {
+export default function day03() {
 	const trangles = input.split("\n").map((line) => line.match(/(\d+)/g)!.map(Number));
 
 	let columns = 0;
@@ -17,4 +17,4 @@ function day03() {
 	return [trangles.filter(isPossible).length, columns];
 }
 
-solve("Day 3: Squares With Three Sides", day03, [917, 1649]);
+register(day03, "Squares With Three Sides", [917, 1649]);

@@ -1,5 +1,5 @@
 import input from "$input/2017/20.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 import { manhattan } from "$lib/math";
 
 import { getOrSet } from "c8n";
@@ -15,7 +15,7 @@ interface Particle {
 // time, I'm keeping it. Change if needed.
 const TICKS = 40;
 
-function day20() {
+export default function day20() {
 	const particles = input.split("\n").map((line, i) => {
 		const coords = line.match(/(-?\d+)/g)!.map(Number);
 
@@ -64,4 +64,4 @@ function day20() {
 	return [closest[0].id, remaining.length];
 }
 
-solve("Day 20: Particle Swarm", day20, [144, 477]);
+register(day20, "Particle Swarm", [144, 477]);

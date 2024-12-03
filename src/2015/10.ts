@@ -1,5 +1,5 @@
 import input from "$input/2015/10.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
 function next(current: number[]) {
 	const sequence: number[] = [];
@@ -29,8 +29,8 @@ function iterate(n: number) {
 	return sequence.length;
 }
 
-function day10() {
+export default function day10() {
 	return [iterate(40), iterate(50)];
 }
 
-solve("Day 10: Elves Look, Elves Say", day10, [360_154, 5_103_798]);
+register(day10, "Elves Look, Elves Say", [360_154, 5_103_798]);

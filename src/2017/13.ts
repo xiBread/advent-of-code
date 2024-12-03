@@ -1,7 +1,7 @@
 import input from "$input/2017/13.txt";
-import { solve } from "$lib";
+import { register } from "$lib/aoc";
 
-function day13() {
+export default function day13() {
 	const firewall = input
 		.split("\n")
 		.map((line) => line.split(": ").map(Number))
@@ -19,4 +19,4 @@ function day13() {
 	];
 }
 
-solve("Day 13: Packet Scanners", day13, [1904, 3_833_504]);
+register(day13, "Packet Scanners", [1904, 3_833_504]);

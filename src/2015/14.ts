@@ -1,6 +1,6 @@
 import input from "$input/2015/14.txt";
-import { solve } from "$lib";
-import { divmod } from "$lib/math";
+import { register } from "$lib/aoc";
+import { divmod } from "$lib/aoc/math";
 
 import { max } from "c8n";
 
@@ -19,7 +19,7 @@ function distance(r: Reindeer, time: number) {
 	return (quo * r.duration + Math.min(rem, r.duration)) * r.speed;
 }
 
-function day14() {
+export default function day14() {
 	const stats = input.split("\n").map((line) => line.match(/(\d+)/g)!.map(Number));
 	const reindeer: Reindeer[] = [];
 
@@ -37,4 +37,4 @@ function day14() {
 	return [max(reindeer.map((r) => distance(r, SECONDS))), max(reindeer.map((r) => r.points))];
 }
 
-solve("Day 14: Reindeer Olympics", day14, [2640, 1102]);
+register(day14, "Reindeer Olympics", [2640, 1102]);
