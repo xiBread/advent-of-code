@@ -17,7 +17,7 @@ interface Solution extends Function {
 module.register("../hooks.js", import.meta.url);
 
 const args = util.parseArgs({
-	args: process.argv.slice(2),
+	args: process.execArgv,
 	allowPositionals: true,
 	options: {
 		skip: {
@@ -53,7 +53,13 @@ async function run(day: string) {
 
 	try {
 		solve((await import(path)).default);
-	} catch {}
+	} catch (error) {
+		if (isNodeError(error) && error.code === "ERR_MODULE_NOT_FOUND") {
+			return;
+		}
+
+		throw error;
+	}
 }
 
 function formatAnswer(answer: unknown, expected?: unknown) {
@@ -125,4 +131,8 @@ function solve(solution: Solution) {
 		...parts,
 		util.styleText(color, duration.toFixed(2)) + util.styleText("gray", unit),
 	]);
+}
+
+function isNodeError(error: unknown): error is NodeJS.ErrnoException {
+	return error instanceof Error && "code" in error;
 }
