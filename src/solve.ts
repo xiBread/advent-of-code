@@ -57,7 +57,7 @@ async function run(day: string) {
 }
 
 function formatAnswer(answer: unknown, expected?: unknown) {
-	if (!answer) {
+	if (answer === undefined) {
 		return util.styleText("gray", "N/A");
 	}
 
