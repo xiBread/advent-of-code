@@ -1,6 +1,6 @@
 import input from "$input/2015/14.txt";
 import { register } from "$lib/aoc";
-import { divmod } from "$lib/aoc/math";
+import { divmod } from "$lib/math";
 
 import { max } from "c8n";
 
