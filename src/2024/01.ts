@@ -7,9 +7,6 @@ export default function day01() {
 	const ids = input.split("\n").map((line) => line.split(/ +/).map(Number));
 	const [left, right] = transpose(ids);
 
-	left.sort((a, b) => a - b);
-	right.sort((a, b) => a - b);
-
 	let distance = 0;
 	let score = 0;
 
