@@ -17,7 +17,7 @@ interface Solution extends Function {
 module.register("../hooks.js", import.meta.url);
 
 const args = util.parseArgs({
-	args: process.execArgv,
+	args: process.argv.slice(2),
 	allowPositionals: true,
 	options: {
 		skip: {
@@ -55,10 +55,10 @@ async function run(day: string) {
 		solve((await import(path)).default);
 	} catch (error) {
 		if (isNodeError(error) && error.code === "ERR_MODULE_NOT_FOUND") {
-			return;
+			console.error(`${year}, Day ${day} does not exist`);
+		} else {
+			throw error;
 		}
-
-		throw error;
 	}
 }
 
