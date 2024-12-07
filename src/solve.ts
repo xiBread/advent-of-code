@@ -32,11 +32,15 @@ const rows: string[][] = [];
 const [year, day] = args.positionals;
 const skipped = args.values.skip?.split(" ").map(Number) ?? [];
 
+let totalRuntime = 0;
+
 if (!day) {
 	for (let i = 1; i <= 25; i++) {
 		if (skipped.includes(i)) continue;
 		await run(i.toString());
 	}
+
+	rows.push(["Total runtime", "", "", "", `${(totalRuntime / 1000).toFixed(2)}s`]);
 } else {
 	await run(day);
 }
@@ -45,6 +49,7 @@ console.log(
 	table([headings, ...rows], {
 		header: day ? undefined : { content: `Advent of Code: ${year}`, alignment: "center" },
 		border: getBorderCharacters("norc"),
+		spanningCells: day ? [] : [{ col: 0, row: rows.length, colSpan: 4, alignment: "right" }],
 	}),
 );
 
@@ -83,6 +88,8 @@ function solve(solution: Solution) {
 	const end = performance.now();
 
 	let duration = end - start;
+	totalRuntime += duration;
+
 	let unit = "ms";
 	let color: Parameters<typeof util.styleText>[0] = "green";
 
