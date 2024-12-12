@@ -119,14 +119,18 @@ function solve(solution: Solution) {
 		if (answer === solution.answer) {
 			stars = "⭐";
 		}
-	} else if (Array.isArray(answer) && Array.isArray(solution.answer)) {
-		for (let i = 0; i < 2; i++) {
-			if (answer[i] === solution.answer[i]) {
-				stars += !stars && i === 1 ? "  ⭐" : "⭐";
-				parts[i] = formatAnswer(answer[i]);
-			} else {
-				parts[i] = formatAnswer(answer[i], solution.answer[i]);
+	} else if (Array.isArray(answer)) {
+		if (Array.isArray(solution.answer)) {
+			for (let i = 0; i < 2; i++) {
+				if (answer[i] === solution.answer[i]) {
+					stars += !stars && i === 1 ? "  ⭐" : "⭐";
+					parts[i] = formatAnswer(answer[i]);
+				} else {
+					parts[i] = formatAnswer(answer[i], solution.answer[i]);
+				}
 			}
+		} else {
+			parts.push(formatAnswer(answer[0]), formatAnswer(answer[1]));
 		}
 	} else {
 		parts.push(formatAnswer(undefined), formatAnswer(undefined));
